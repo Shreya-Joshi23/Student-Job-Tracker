@@ -11,9 +11,12 @@ const PORT=process.env.PORT || 5000
 dotenv.config()
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors({
     origin: ["https://student-job-tracker-6wae.vercel.app/","http://localhost:5173"], 
     credentials: true,
+    options:["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],     
 }));
 
