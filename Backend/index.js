@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.options("*", cors({
-    origin: ["https://student-job-tracker-6wae.vercel.app/","http://localhost:5173"], 
+    origin: ["https://student-job-tracker-6wae.vercel.app/","https://student-job-tracker-2-y9an.onrender.com/","http://localhost:5173"], 
     credentials: true,
     options:["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],     
