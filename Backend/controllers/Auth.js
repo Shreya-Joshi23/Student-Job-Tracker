@@ -30,7 +30,7 @@ export const signupuser = async (req, res) => {
       res.cookie("cuvette_token", token, {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
-        secure: false,
+        secure: true,
       });
       res.status(200).json({
         success: true,
@@ -78,7 +78,7 @@ export const signinuser = async (req, res) => {
     res.cookie("cuvette_token", token, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
-      secure: false,
+      secure: true,
     });
 
     return res.status(200).json({
@@ -99,7 +99,7 @@ export const logoutuser = async (req, res) => {
     const isProduction = process.env.NODE_ENV === "production";
     res.cookie("cuvette_token", "", {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "lax",
       maxAge: 0,
     });
