@@ -13,7 +13,7 @@ dotenv.config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
+app.options("*", cors({
     origin: ["https://student-job-tracker-6wae.vercel.app/","http://localhost:5173"], 
     credentials: true,
     options:["GET", "POST", "PUT", "DELETE", "OPTIONS"],
