@@ -9,7 +9,7 @@ const AuthProvider=({children})=>{
         console.log("I am AuthProvider")
         const fetchUser=async ()=>{
             try{
-                const result=await axios.get(`${process.env.BACKEND_URL}/api/v1/auth/isAuth`,{
+                const result=await axios.get(`https://student-job-tracker-3-u6ni.onrender.com/api/v1/auth/isAuth`,{
                     withCredentials:true
                 });
                 console.log(result)
