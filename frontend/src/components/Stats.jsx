@@ -13,10 +13,11 @@ import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
 import AddApplication from "./ApplicationDialog";
 import { useRecoilState } from "recoil";
-import applicationState from "../atom/applicationatom.js"
+import applicationState from "../atom/applicationatom.js";
 
 const Stats = () => {
-  const [ applicationdata, setapplicationdata ] = useRecoilState(applicationState);
+  const [applicationdata, setapplicationdata] =
+    useRecoilState(applicationState);
   const [DialogOpen, setDialog] = useState(false);
   const [editStatusRowId, setEditStatusRowId] = useState(null);
 
@@ -75,7 +76,12 @@ const Stats = () => {
   };
 
   const column = [
-    { field: "_id", headerName: "ID", sortable: false, width: 70 },
+    {
+      field: "serial",
+      headerName: "ID",
+      width: 70,
+      sortable: false
+    },
     {
       field: "company",
       headerName: "CompanyName",
@@ -153,7 +159,7 @@ const Stats = () => {
       field: "Delete",
       header: "Delete application",
       width: 110,
-      sortable:false,
+      sortable: false,
       renderCell: (params) => {
         console.log(params);
         return (
@@ -173,7 +179,7 @@ const Stats = () => {
           My Placement Stats
         </Typography>
         <DataGrid
-          rows={applicationdata}
+          rows={applicationdata.map((row,index)=>({...row,serial:index+1}))}
           columns={column}
           getRowId={(row) => row._id}
           initialState={{ pagination: { paginationModel } }}
