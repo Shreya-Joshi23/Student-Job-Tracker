@@ -22,7 +22,7 @@ const Navbar = () => {
     try {
       console.log("Logout called");
       const result = await axios.post(
-        "http://localhost:5000/api/v1/auth/logout",
+        `${process.env.BACKEND_URL}/api/v1/auth/logout`,
         {},
         {
           withCredentials: true,

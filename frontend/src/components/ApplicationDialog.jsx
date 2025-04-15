@@ -11,7 +11,7 @@ const AddApplication = ({ open,setDialog }) => {
     const handleSubmit = async (formJson) => {
         try {
           const result = await axios.post(
-            "http://localhost:5000/api/v1/addapplication",
+            `${process.env.BACKEND_URL}/api/v1/addapplication`,
             formJson,{
               withCredentials:true
             }

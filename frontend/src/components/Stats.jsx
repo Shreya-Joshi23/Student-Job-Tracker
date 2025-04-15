@@ -25,7 +25,7 @@ const Stats = () => {
     const getapplications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/getapplications",
+          `${process.env.BACKEND_URL}/api/v1/getapplications`,
           {
             withCredentials: true,
           }
@@ -41,7 +41,7 @@ const Stats = () => {
   const handleDelete = async (id) => {
     try {
       const result = await axios.delete(
-        `http://localhost:5000/api/v1/deleteapplication/${id}`,
+        `${process.env.BACKEND_URL}/api/v1/deleteapplication/${id}`,
         {
           withCredentials: true,
         }
@@ -57,7 +57,7 @@ const Stats = () => {
   const handleStatusChange = async (newStatus, id) => {
     try {
       await axios.patch(
-        `http://localhost:5000/api/v1/updatestatus/${id}`,
+        `${process.env.BACKEND_URL}/api/v1/updatestatus/${id}`,
         { status: newStatus },
         {
           withCredentials: true,
