@@ -31,6 +31,7 @@ export const signupuser = async (req, res) => {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
         secure: true,
+        sameSite:"none"
       });
       res.status(200).json({
         success: true,
@@ -79,6 +80,7 @@ export const signinuser = async (req, res) => {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
       secure: true,
+      sameSite:"none"
     });
 
     return res.status(200).json({
@@ -100,7 +102,7 @@ export const logoutuser = async (req, res) => {
     res.cookie("cuvette_token", "", {
       httpOnly: true,
       secure: true,
-      sameSite: "lax",
+      sameSite: "none",
       maxAge: 0,
     });
     res.status(200).json({ success: true, message: "User logged out" });
