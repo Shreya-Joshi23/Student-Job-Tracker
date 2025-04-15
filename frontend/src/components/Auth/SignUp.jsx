@@ -33,7 +33,7 @@ const SignUp = () => {
     try {
       setloading(true);
       const result = await axios.post(
-        `${process.env.BACKEND_URL}/api/v1/auth/signup`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/signup`,
         userData,
         {
           withCredentials: true,

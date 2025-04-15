@@ -26,7 +26,7 @@ const SignIn = () => {
   const handleSubmit=async (e)=>{
     e.preventDefault()
     try{
-      const result=await axios.post(`${process.env.BACKEND_URL}/api/v1/auth/signin`,userData,{
+      const result=await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/signin`,userData,{
         withCredentials:true
       })
       alert(result.data.message)
