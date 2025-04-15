@@ -26,7 +26,7 @@ const Stats = () => {
     const getapplications = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_URL}/api/v1/getapplications`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/getapplications`,
           {
             withCredentials: true,
           }
@@ -42,7 +42,7 @@ const Stats = () => {
   const handleDelete = async (id) => {
     try {
       const result = await axios.delete(
-        `${process.env.BACKEND_URL}/api/v1/deleteapplication/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/deleteapplication/${id}`,
         {
           withCredentials: true,
         }
@@ -58,7 +58,7 @@ const Stats = () => {
   const handleStatusChange = async (newStatus, id) => {
     try {
       await axios.patch(
-        `${process.env.BACKEND_URL}/api/v1/updatestatus/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/updatestatus/${id}`,
         { status: newStatus },
         {
           withCredentials: true,
