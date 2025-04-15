@@ -21,6 +21,7 @@ const Stats = () => {
   const [DialogOpen, setDialog] = useState(false);
   const [editStatusRowId, setEditStatusRowId] = useState(null);
 
+  
   useEffect(() => {
     const getapplications = async () => {
       try {
